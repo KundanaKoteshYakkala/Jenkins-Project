@@ -1,0 +1,15 @@
+pipeline{
+    agent any
+    stages{
+        stage("PACKAGING:"){
+            steps{
+                bat 'mvn package'
+            }
+        }
+        stage("EXECUTING:"){
+                steps{
+                    bat 'java -jar target/sgcgPRoject-1.0-SNAPSHOT.jar'
+                }
+        }
+    }
+}
